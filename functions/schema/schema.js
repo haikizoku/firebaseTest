@@ -6,7 +6,7 @@ const typeDefs = gql`
     name: String!
   }
   type Query {
-    compagny: [Compagny]
+    compagnies: [Compagny]
   }
 `;
 module.exports = typeDefs;
