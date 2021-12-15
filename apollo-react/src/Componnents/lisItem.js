@@ -11,7 +11,6 @@ export default function ListItem() {
         </li>
         <li class="list-group-item d-flex">
           <p class="p-0 m-0 flex-grow-1">First item</p>
-          <button class="btn btn-primary">EDIT</button>{" "}
         </li>
         <li class="list-group-item d-flex">
           <p class="p-0 m-0 flex-grow-1">Second item</p>
