@@ -8,7 +8,7 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import * as serviceWorker from "./serviceWorker";
 
 const client = new ApolloClient({
-  // uri:
+  uri: "http://localhost:5000/testfirebase-35a6c/us-central1/graphql",
 });
 
 ReactDOM.render(

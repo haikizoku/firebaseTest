@@ -1,20 +1,41 @@
-import React from "react";
-import { useQuery } from "@apollo/react-hooks";
-import gql from "graphql-tag";
 import "./App.css";
-import Title from "./Componnents/title";
-import ListItem from "./Componnents/lisItem";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  HttpLink,
+  from,
+} from "@apollo/client";
+import { onError } from "@apollo/client/link/error";
+import GetCompagnies from "./Componnents/GetCompagnies";
 
-export default function App() {
+const errorLink = onError(({ graphqlErrors, networkError }) => {
+  if (graphqlErrors) {
+    graphqlErrors.map(({ message, location, path }) => {
+      alert(`Graphql error ${message}`);
+    });
+  }
+});
+
+const link = from([
+  errorLink,
+  new HttpLink({
+    uri: "http://localhost:5000/testfirebase-35a6c/us-central1/graphql",
+  }),
+]);
+
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  link: link,
+});
+
+function App() {
   return (
-    <div
-      class="container"
-      style={{ display: "block", width: 700, padding: 50 }}
-    >
-      <div>
-        <Title />
-        <ListItem />
-      </div>
-    </div>
+    <ApolloProvider client={client}>
+      {" "}
+      <GetCompagnies />
+    </ApolloProvider>
   );
 }
+
+export default App;
