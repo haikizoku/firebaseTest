@@ -9,7 +9,7 @@ const typeDefs = gql`
     compagnies: [Compagny]
   }
   type Mutation {
-    addCompagny(text: String): String!
+    addCompagny(name: String): String!
   }
 `;
 module.exports = typeDefs;

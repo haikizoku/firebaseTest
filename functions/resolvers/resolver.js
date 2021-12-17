@@ -9,9 +9,9 @@ const resolvers = {
   },
 
   Mutation: {
-    async addCompagny(_, { text }) {
+    async addCompagny(_, { name }) {
       const ref = admin.firestore().collection("Compagny").doc();
-      await ref.set({ text });
+      await ref.set({ name });
       return ref.id;
     },
   },
