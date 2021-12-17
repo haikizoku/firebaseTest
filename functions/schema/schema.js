@@ -8,5 +8,8 @@ const typeDefs = gql`
   type Query {
     compagnies: [Compagny]
   }
+  type Mutation {
+    addCompagny(text: String): String!
+  }
 `;
 module.exports = typeDefs;
