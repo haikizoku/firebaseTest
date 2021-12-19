@@ -6,7 +6,7 @@ const typeDefs = gql`
     name: String!
   }
   type Query {
-    compagnies: [Compagny]
+    getCompagnies: [Compagny]
   }
   type Mutation {
     addCompagny(name: String): String!
