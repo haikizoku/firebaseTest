@@ -10,6 +10,7 @@ const typeDefs = gql`
   }
   type Mutation {
     addCompagny(name: String): String!
+    deletteCompagny(id: String): String!
   }
 `;
 module.exports = typeDefs;
