@@ -1,2 +1,3 @@
 node_modules/
 database/account.json
+firebase-debug.log
