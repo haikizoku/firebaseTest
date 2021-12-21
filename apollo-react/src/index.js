@@ -12,7 +12,7 @@ import * as serviceWorker from "./serviceWorker";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "http://localhost:5000/testfirebase-35a6c/us-central1/graphql",
+  uri: "https://us-central1-testfirebase-35a6c.cloudfunctions.net/graphql",
   onError: (e) => {
     console.log(e);
   },
