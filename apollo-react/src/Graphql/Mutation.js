@@ -1,8 +1,8 @@
-import { gql } from "@apollo/client";
+import { gql, useMutation } from "@apollo/client";
 
 export const LOAD_COMPAGNIES = gql`
   query {
-    compagnies {
+    getCompagnies {
       id
       name
     }
