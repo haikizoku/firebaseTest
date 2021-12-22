@@ -10,7 +10,8 @@ const typeDefs = gql`
   }
   type Mutation {
     addCompagny(name: String): String!
-    deletteCompagny(id: String): String!
+    deletteCompagny(id: String): ID!
+    updateCompagny(id: String, name: String): String!
   }
 `;
 module.exports = typeDefs;

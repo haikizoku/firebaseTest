@@ -7,7 +7,6 @@ const resolvers = {
         const Compagny = await admin.firestore().collection("Compagny").get();
         return Compagny.docs.map((Compagny) => Compagny.data());
       } catch (error) {
-        console.log(error.message);
         return "error  loading data " + error;
       }
     },
@@ -32,6 +31,18 @@ const resolvers = {
         return "remove failed... " + error;
       }
     },
+
+    async updateCompagny(root, args) {
+      try {
+        const ref = admin.firestore().collection("Compagny").doc(args.id);
+        await ref.update({ name: args.name });
+        return "Data updated!";
+      } catch (error) {
+        return "update  failled ... " + error;
+      }
+    },
   },
 };
 module.exports = resolvers;
+
+//jVmeZFIhFxvROqCNffp1
