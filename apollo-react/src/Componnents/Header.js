@@ -2,12 +2,12 @@ import { InputGroup, FormControl, Button, Row, Col } from "react-bootstrap";
 import React from "react";
 import { useMutation } from "@apollo/client";
 import Title from "./Title";
-import { LOAD_COMPAGNIES } from "../Graphql/Mutation";
-import { CREATE_COMPAGNY } from "../Graphql/Query";
+import { LOAD_COMPAGNIES } from "../Graphql/Query";
+import { CREATE_COMPAGNY } from "../Graphql/Mutation";
 
 export default function Header() {
   let input;
-  const [addTodo, { loading, error }] = useMutation(CREATE_COMPAGNY, {
+  const [addCompagny, { loading, error }] = useMutation(CREATE_COMPAGNY, {
     refetchQueries: [LOAD_COMPAGNIES],
   });
 
@@ -20,7 +20,7 @@ export default function Header() {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            addTodo({ variables: { name: input.value } });
+            addCompagny({ variables: { name: input.value } });
             input.value = "";
           }}
         >
