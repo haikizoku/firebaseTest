@@ -1,19 +1,19 @@
-import { React, Button } from "react";
-import { Form, Container } from "react-bootstrap";
-import { LOAD_COMPAGNIES } from "../Graphql/Query";
-import { DELETTE_COMPAGNY } from "../Graphql/Mutation";
-import { useMutation } from "@apollo/client";
+import { React, Button, useState } from "react";
+import { Container } from "react-bootstrap";
+
 export default function AddForm(name) {
   const value = name;
+  const [setShow] = useState(false);
 
+  const handleShow = () => setShow(true);
   return (
     <Container>
-      <Form id="insertForm" method="post">
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Name</Form.Label>
-          <Form.Control type="email" placeholder={value.name} name="" />
-        </Form.Group>
-      </Form>
+      <li class="list-group-item d-flex">
+        <p class="p-0 m-0 flex-grow-1">{value.name} </p>
+        <Button class="btn-success" onClick={handleShow}>
+          Edit
+        </Button>
+      </li>
     </Container>
   );
 }
