@@ -28,16 +28,19 @@ export default function Header() {
             <Col sm={4}>
               <Title />
             </Col>
-            <FormControl
-              sm={3}
-              ref={(node) => {
-                input = node;
-              }}
-            />
-            <Col sm={1}></Col>
-            <Button type="submit" variant="success" sm={4}>
-              add
-            </Button>
+            <Col sm={1}>
+              <FormControl
+                ref={(node) => {
+                  input = node;
+                }}
+              />
+            </Col>
+
+            <Col sm={1}>
+              <Button variant="success" type="submit" sm={4}>
+                Add
+              </Button>
+            </Col>
           </InputGroup>
         </form>
       </Row>

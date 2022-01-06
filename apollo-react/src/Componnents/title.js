@@ -1,3 +1,9 @@
 export default function Title() {
-  return <h4>Back office/Compagnies</h4>;
+  return (
+    <i class="bi bi-square-fill -text-left" style={{ color: "green" }}>
+      <span style={{ fontWeight: "bold", color: "black" }}>
+        Back office/Compagnies
+      </span>
+    </i>
+  );
 }

@@ -6,7 +6,6 @@ import { LOAD_COMPAGNIES } from "../Graphql/Query";
 import { useMutation } from "@apollo/client";
 export default function UsingHookModal(props) {
   const [modalShow, setShow] = useState(false);
-
   let [name, setName] = useState("");
   let compagny = props.item;
   const [deletteCompagny] = useMutation(DELETTE_COMPAGNY, {
@@ -49,14 +48,11 @@ export default function UsingHookModal(props) {
           />
         </Modal.Body>
         <Modal.Footer>
-          <Button
-            variant="secondary"
-            onClick={() => handleDelette(compagny.id)}
-          >
+          <Button variant="danger" onClick={() => handleDelette(compagny.id)}>
             DELETE
           </Button>
           <Button
-            variant="primary"
+            variant="success"
             onClick={(e) => handleUpdate(compagny.id, name)}
           >
             SAVE

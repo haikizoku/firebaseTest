@@ -6,7 +6,7 @@ import UsingHookModal from "../Componnents/modal";
 export default function CompagnyList(props) {
   const { error, loading, data } = useQuery(LOAD_COMPAGNIES);
 
-  if (loading) return <div>spiner....</div>;
+  if (loading) return <div>Loading....</div>;
   if (error) return <div>something went wrong </div>;
 
   return (
